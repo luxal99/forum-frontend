@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material.module";
-import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    RegistrationComponent
+    LoginDialogComponent,
+    RegistrationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +22,7 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserAnimationsModule
   ],
   providers: [],
+  entryComponents:[LoginDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

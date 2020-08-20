@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openLoginDialog(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      width: 'auto'
+    });
+
+  }
+
+  openRegistrationDialog(): void {
+    const dialogRef = this.dialog.open(RegistrationDialogComponent, {
+      width: 'auto'
+    });
+
   }
 
 }
