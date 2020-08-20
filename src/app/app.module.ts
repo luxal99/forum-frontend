@@ -9,6 +9,7 @@ import { MaterialModule } from "./material.module";
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [],
