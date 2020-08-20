@@ -7,49 +7,52 @@
         <mat-step>
             <ng-template matStepLabel>Licni podaci</ng-template>
 
-            <div class="form-div">
-                <div>
-                    <mat-form-field appearance="legacy">
-                        <mat-label>Ime i prezime</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-icon matSuffix>notes</mat-icon>
-
-                    </mat-form-field>
+            <form [formGroup]="userInfoForm">
+                <div class="form-div">
+                    <div>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Ime i prezime</mat-label>
+                            <input matInput formControlName="full_name" placeholder="Placeholder">
+                            <mat-icon matSuffix>notes</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" placeholder="Placeholder">
+                            <mat-icon matSuffix>mail</mat-icon>
+                        </mat-form-field>
+                    </div>
                 </div>
-                <div>
-                    <mat-form-field appearance="legacy">
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-icon matSuffix>mail</mat-icon>
-                    </mat-form-field>
-                </div>
-            </div>
+            </form>
             <div>
-                <button class="silver-btn" matStepperNext>Dalje</button>
+                <button class="silver-btn" matStepperNext [disabled]="!userInfoForm.valid">Dalje</button>
             </div>
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Korisnicki podaci</ng-template>
-            <div class="form-div">
-                <div>
-                    <mat-form-field appearance="legacy">
-                        <mat-label>Korisnicko ime</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-icon matSuffix>person</mat-icon>
+            <form [formGroup]="userForm">
+                <div class="form-div">
+                    <div>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Korisnicko ime</mat-label>
+                            <input formControlName="username" matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>person</mat-icon>
 
-                    </mat-form-field>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Sifra</mat-label>
+                            <input matInput placeholder="Placeholder" type="password" formControlName="password">
+                            <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                    </div>
                 </div>
-                <div>
-                    <mat-form-field appearance="legacy">
-                        <mat-label>Sifra</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-icon matSuffix>lock</mat-icon>
-                    </mat-form-field>
-                </div>
-            </div>
+            </form>
             <div>
                 <button class="silver-btn" matStepperPrevious>Nazad</button>
-                <button class="red-btn">Registruj se</button>
+                <button class="red-btn" (click)="register()" [disabled]="!userForm.valid">Registruj se</button>
             </div>
         </mat-step>
     </mat-horizontal-stepper>
