@@ -10,12 +10,14 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginDialogComponent,
-    RegistrationDialogComponent
+    RegistrationDialogComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

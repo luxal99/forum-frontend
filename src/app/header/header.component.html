@@ -1,0 +1,36 @@
+<div class="nav-menu">
+    <div class="row text-center">
+        <div class="col-sm text-center">
+            <img src="../../assets/img/logo.png" width="100px" alt="" class="img-fluid">
+        </div>
+        <div class="col-sm">
+            <mat-form-field appearance="legacy">
+                <mat-label>Legacy form field</mat-label>
+                <input matInput placeholder="Placeholder">
+                <mat-icon matSuffix>search</mat-icon>
+                <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-sm text-right">
+
+            <div style="display: inline-flex;">
+                <h4 id="userParagraf">{{loggedUser}}</h4>
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn" id="userBtn"><mat-icon>keyboard_arrow_down</mat-icon></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+
+                <a (click)="openLoginDialog()">
+                    <h5 class="h4-bold" id="h4-bold">Login</h5>
+                </a>
+                <a>
+                    <h5 class="h4-bold-active" id="h4-bold-active" (click)="openRegistrationDialog()">Sign Up</h5>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>

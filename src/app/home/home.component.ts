@@ -15,18 +15,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  openLoginDialog(): void {
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: 'auto'
-    });
-
-  }
-
-  openRegistrationDialog(): void {
-    const dialogRef = this.dialog.open(RegistrationDialogComponent, {
-      width: 'auto'
-    });
-
-  }
-
 }
