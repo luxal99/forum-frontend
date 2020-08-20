@@ -1,21 +1,34 @@
-<ul class="nav justify-content-center">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-</ul>
+<mat-drawer-container class="example-container" fullscreen>
+    <mat-drawer mode="side">Drawer content</mat-drawer>
+    <mat-drawer-content>
+        <div class="nav-menu">
+            <div class="row text-center">
+                <div class="col-sm text-center">
+                    <img src="../../assets/img/logo.png" width="100px" alt="" class="img-fluid">
+                </div>
+                <div class="col-sm">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Legacy form field</mat-label>
+                        <input matInput placeholder="Placeholder">
+                        <mat-icon matSuffix>search</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm text-right">
 
-<mat-form-field appearance="legacy">
-    <mat-label>Legacy form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-</mat-form-field>
+                    <div style="display: inline-flex;">
+                        <h4>luxal99</h4>
+
+                        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn"><mat-icon>keyboard_arrow_down</mat-icon></button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>Item 1</button>
+                            <button mat-menu-item>Item 2</button>
+                        </mat-menu>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
