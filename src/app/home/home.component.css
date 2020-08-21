@@ -1,0 +1,16 @@
+.add-topic-btn {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-color: #121212;
+    border: 1px solid #121212;
+    color: #fff;
+    padding: .5em 2em .5em 2em;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+}
+
+.home-container {
+    padding: 5% 10% 0 10%;
+}

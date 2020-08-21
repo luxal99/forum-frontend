@@ -10,14 +10,14 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   loggedUser = localStorage.getItem("loggedUser");
 
 
   ngOnInit() {
     console.log(this.loggedUser);
-    
+
     this.isLogged();
   }
 
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem("token") === null) {
       document.getElementById("userParagraf").style.display = 'none';
       document.getElementById("userBtn").style.display = 'none';
-    }else{
+    } else {
       document.getElementById("h4-bold").style.display = 'none';
       document.getElementById("h4-bold-active").style.display = 'none';
     }
@@ -37,12 +37,20 @@ export class HeaderComponent implements OnInit {
       width: 'auto'
     });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.isLogged();
+    });
   }
 
   openRegistrationDialog(): void {
     const dialogRef = this.dialog.open(RegistrationDialogComponent, {
       width: 'auto'
     });
+  }
 
+  logout(){
+    localStorage.removeItem("loggedUser");
+    localStorage.removeItem("token");
+    location.reload();
   }
 }
