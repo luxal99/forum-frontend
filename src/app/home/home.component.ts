@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
   listOfCategories: Array<Category> = [];
   listOfTopics: Array<Topics> = [];
 
-  constructor(private dialog: MatDialog, private categoryService: CategoryService, private topicService: TopicService) { }
+  constructor(private dialog: MatDialog, private categoryService: CategoryService,
+    private topicService: TopicService, private vcRef: ViewContainerRef, private cResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.getAllCategories();
@@ -37,8 +38,6 @@ export class HomeComponent implements OnInit {
 
   getAllTopics() {
     this.topicService.getAll().subscribe(data => {
-      console.log(data);
-      
       this.listOfTopics = data as Array<Topics>
     }, err => {
 
@@ -56,5 +55,13 @@ export class HomeComponent implements OnInit {
         width: 'auto'
       });
     }
+  }
+
+  async loadTopic() {
+    console.log('aa');
+    
+    this.vcRef.clear();
+    const { TopicOverviewComponent } = await import('../topic-overview/topic-overview.component');
+    this.vcRef.createComponent(this.cResolver.resolveComponentFactory(TopicOverviewComponent))
   }
 }
