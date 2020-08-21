@@ -7,6 +7,10 @@ export class Topics {
     id_user: User;
     question:string;
 
+    listOfReplies;
+    idTopicsCategory;
+    idUser;
+
     constructor(title?, id_category?, id_user?,question?) {
         this.title = title;
         this.id_category = id_category;

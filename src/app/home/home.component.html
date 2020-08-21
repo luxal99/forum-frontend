@@ -4,10 +4,37 @@
         <app-header></app-header>
         <div class="home-container">
             <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm text-right">
-                    <button class="add-topic-btn" (click)="openAddTopicDialog()"><i class="fa fa-plus" style="color: #fff;"></i> KREIRAJ TEMU</button>
+                <div class="col-sm">
+                    <div class="topic" *ngFor="let topic of listOfTopics">
+                        <div class="row">
+                            <div class="col-sm-1 text-center">
+                                <h6 style="font-weight: bold;"><i class="fa fa-reply" style="color: #FF634E;"></i> {{topic.listOfReplies.length}}</h6>
+                            </div>
+                            <div class="col-sm">
+                                <h4>{{topic.title}}</h4>
+                                <h6 class="topic-card-category text-center" [ngStyle]="{ 'background-color': topic.idTopicsCategory.color  }">{{topic.idTopicsCategory.title}}</h6>
+                            </div>
+                            <div class="col-sm">
+                                <div class="text-right">
+                                    <h6>{{topic.idUser.username}}</h6>
+                                    <h6 style="font-weight: bold;color: #FF634E;line-height: 1px;">{{topic.idUser.idUserInfo.fullName}}</h6>
+                                    <h6 style="font-size: 10px;">{{topic.date}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-sm-3 text-right">
+                    <button class="add-topic-btn" (click)="openAddTopicDialog()"><i class="fa fa-plus" style="color: #fff;"></i> KREIRAJ TEMU</button>
+                    <mat-divider style="margin-top: 2em;"></mat-divider>
+                    <div class="category-div">
+
+                        <li *ngFor="let category of listOfCategories">
+                            <h6><i class="fa fa-circle" [ngStyle]="{ 'color': category.color  }"></i> {{category.title}}</h6>
+                        </li>
+                    </div>
+                </div>
+
             </div>
         </div>
     </mat-drawer-content>

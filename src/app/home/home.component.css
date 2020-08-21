@@ -14,3 +14,37 @@
 .home-container {
     padding: 5% 10% 0 10%;
 }
+
+li {
+    list-style-type: none;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-top: .5em;
+}
+
+.category-div {
+    padding-top: 1.5em;
+}
+
+.topic {
+    padding: 1em;
+    margin-top: 2em;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+}
+
+.topic h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.topic-card-category {
+    padding: .5em;
+    font-size: 15px;
+    color: #fff;
+    width: 30%;
+}

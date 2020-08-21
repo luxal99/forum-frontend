@@ -3,6 +3,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 import { AddTopicDialogComponent } from './add-topic-dialog/add-topic-dialog.component';
+import { CategoryService } from '../service/category.service';
+import { Category } from '../models/Category';
+import { Topics } from '../models/Topics';
+import { TopicService } from '../service/topic.service';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +15,43 @@ import { AddTopicDialogComponent } from './add-topic-dialog/add-topic-dialog.com
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+
+
+  listOfCategories: Array<Category> = [];
+  listOfTopics: Array<Topics> = [];
+
+  constructor(private dialog: MatDialog, private categoryService: CategoryService, private topicService: TopicService) { }
 
   ngOnInit() {
+    this.getAllCategories();
+    this.getAllTopics();
+  }
+
+  getAllCategories() {
+    this.categoryService.getAll().subscribe(data => {
+      this.listOfCategories = data as Array<Category>
+    }, err => {
+
+    })
+  }
+
+  getAllTopics() {
+    this.topicService.getAll().subscribe(data => {
+      console.log(data);
+      
+      this.listOfTopics = data as Array<Topics>
+    }, err => {
+
+    })
   }
 
   openAddTopicDialog(): void {
-   
-    if(localStorage.getItem("loggedUser") !== null){
-       const dialogRef = this.dialog.open(AddTopicDialogComponent, {
-      width: 'auto'
-    });
-    }else{
+
+    if (localStorage.getItem("loggedUser") !== null) {
+      const dialogRef = this.dialog.open(AddTopicDialogComponent, {
+        width: 'auto'
+      });
+    } else {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
         width: 'auto'
       });
