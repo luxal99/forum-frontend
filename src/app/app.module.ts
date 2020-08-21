@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AddTopicDialogComponent } from './home/add-topic-dialog/add-topic-dialog.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { AddTopicDialogComponent } from './home/add-topic-dialog/add-topic-dialo
   ],
   imports: [
     BrowserModule,
+    CKEditorModule,
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
@@ -30,7 +32,7 @@ import { AddTopicDialogComponent } from './home/add-topic-dialog/add-topic-dialo
     BrowserAnimationsModule
   ],
   providers: [],
-  entryComponents:[LoginDialogComponent,RegistrationDialogComponent],
+  entryComponents:[LoginDialogComponent,AddTopicDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AbstractService } from './abstract.service';
-import { Category } from "../models/Category";
+import { Topics } from '../models/Topics';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService extends AbstractService<Category> {
+export class TopicService extends AbstractService<Topics> {
 
-  route = "category"
-
+  route = "topic"
 }

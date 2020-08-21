@@ -1,6 +1,7 @@
 import { UserInfo } from "./UserInfo";
 
 export class User {
+    id;
     username: string;
     password: string;
     idUserInfo: UserInfo;

@@ -43,8 +43,6 @@ export class RegistrationDialogComponent implements OnInit {
       this.registrationService.save(obj).subscribe(data => {
         this.openSnackBar("Uspesno ste se registrovali", "OK")
       }, err => {
-        console.log(err);
-
       })
     } else {
       this.openSnackBar("Sifre se ne poklapaju", "OK");
