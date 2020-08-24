@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { AddTopicDialogComponent } from './home/add-topic-dialog/add-topic-dialog.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TopicOverviewComponent } from './topic-overview/topic-overview.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,9 @@ import { TopicOverviewComponent } from './topic-overview/topic-overview.componen
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpClientModule,
+    {provide:LocationStrategy,useClass:HashLocationStrategy}
+  ],
   entryComponents:[LoginDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })

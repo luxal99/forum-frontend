@@ -1,3 +1,19 @@
+<app-header></app-header>
 <div class="topic-container" id="topic-container">
     <h3>{{topic.title}}</h3>
+    <h6>{{topic.idUser.idUserInfo.fullName}}</h6>
+    <p [innerHTML]="topic.question"></p>
+    <h6 class="category-h6 text-center" [ngStyle]="{ 'background-color': topic.idTopicsCategory.color  }">{{topic.idTopicsCategory.title}}</h6>
+    <mat-divider></mat-divider>
+
+    <div class="reply-container">
+        <div class="reply" *ngFor="let reply of topic.listOfReplies">
+            <h4>{{reply.idUser.idUserInfo.fullName}}</h4>
+            <h6 style="font-weight: bold;">{{reply.idUser.username}}</h6>
+            <div class="reply-content">
+                <p innerHTML="{{reply.title}}"></p>
+            </div>
+            <mat-divider style="margin-top: 2em;"></mat-divider>
+        </div>
+    </div>
 </div>
