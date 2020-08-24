@@ -2,3 +2,13 @@
 body {
     background-color: #F3F4F5;
 }
+
+::-webkit-scrollbar {
+    height: 1em;
+    background-color: #121212;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #FF634E;
+    border-radius: 10px;
+}

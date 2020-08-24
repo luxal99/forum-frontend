@@ -8,8 +8,15 @@
 
     <div class="reply-container">
         <div class="reply" *ngFor="let reply of topic.listOfReplies">
-            <h4>{{reply.idUser.idUserInfo.fullName}}</h4>
-            <h6 style="font-weight: bold;">{{reply.idUser.username}}</h6>
+            <div class="row">
+                <div class="col-sm">
+                    <h4>{{reply.idUser.idUserInfo.fullName}}</h4>
+                    <h6 style="font-weight: bold;">{{reply.idUser.username}}</h6>
+                </div>
+                <div class="col-sm text-right">
+                    <h6 style="padding-top: 4em;"><i class="fa fa-heart" style="color: #FF634E;"></i> {{reply.likes}}</h6>
+                </div>
+            </div>
             <div class="reply-content">
                 <p innerHTML="{{reply.title}}"></p>
             </div>
