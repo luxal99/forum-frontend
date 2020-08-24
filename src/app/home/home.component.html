@@ -1,9 +1,8 @@
-<app-header>
-</app-header>
-<div class="home-container">
+<app-header></app-header>
+<div class="home-container" id="home-container">
     <div class="row">
         <div class="col-sm">
-            <div class="topic" *ngFor="let topic of listOfTopics">
+            <div class="topic" *ngFor="let topic of listOfTopics" routerLink="/topic/{{topic.id}}">
                 <div class="row">
                     <div class="col-sm-1 text-center">
                         <h6 style="font-weight: bold;"><i class="fa fa-reply" style="color: #FF634E;"></i> {{topic.listOfReplies.length}}</h6>

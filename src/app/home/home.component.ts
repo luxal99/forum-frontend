@@ -57,11 +57,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  async loadTopic() {
-    console.log('aa');
-    
+  async openTopic(id) {
     this.vcRef.clear();
     const { TopicOverviewComponent } = await import('../topic-overview/topic-overview.component');
     this.vcRef.createComponent(this.cResolver.resolveComponentFactory(TopicOverviewComponent))
+
+    localStorage.setItem("topicID",id);    
   }
 }

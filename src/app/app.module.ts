@@ -14,7 +14,6 @@ import { HeaderComponent } from './header/header.component';
 import { AddTopicDialogComponent } from './home/add-topic-dialog/add-topic-dialog.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TopicOverviewComponent } from './topic-overview/topic-overview.component';
-import { BaseComponent } from './base/base.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,6 @@ import { BaseComponent } from './base/base.component';
     RegistrationDialogComponent,
     HeaderComponent,
     AddTopicDialogComponent,
-    BaseComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +34,7 @@ import { BaseComponent } from './base/base.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  entryComponents:[LoginDialogComponent,TopicOverviewComponent,AddTopicDialogComponent,RegistrationDialogComponent],
+  entryComponents:[LoginDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

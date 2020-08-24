@@ -2,6 +2,7 @@ import { Category } from './Category';
 import { User } from './User';
 
 export class Topics {
+    id;
     title: string;
     id_category: Category;
     id_user: User;
@@ -10,6 +11,7 @@ export class Topics {
     listOfReplies;
     idTopicsCategory;
     idUser;
+    date;
 
     constructor(title?, id_category?, id_user?,question?) {
         this.title = title;
