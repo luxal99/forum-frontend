@@ -50,6 +50,11 @@ export class HomeComponent implements OnInit {
       const dialogRef = this.dialog.open(AddTopicDialogComponent, {
         width: 'auto'
       });
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.getAllTopics();
+      });
+
     } else {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
         width: 'auto'
@@ -62,6 +67,12 @@ export class HomeComponent implements OnInit {
     const { TopicOverviewComponent } = await import('../topic-overview/topic-overview.component');
     this.vcRef.createComponent(this.cResolver.resolveComponentFactory(TopicOverviewComponent))
 
-    localStorage.setItem("topicID",id);    
+    localStorage.setItem("topicID", id);
+  }
+
+  groupByCategory(id) {
+    this.topicService.groupByCategory(id).subscribe(data => {
+      this.listOfTopics = data as Array<Topics>;
+    })
   }
 }

@@ -1,0 +1,9 @@
+<div class="reply-container">
+    <p [innerHTML]="data.question"></p>
+    <div>
+        <ckeditor #editor [editor]="Editor"></ckeditor>
+    </div>
+    <div class="text-center">
+        <button class="save-btn" (click)="saveReply()">POSALJI</button>
+    </div>
+</div>

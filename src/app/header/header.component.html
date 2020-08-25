@@ -4,12 +4,18 @@
             <img src="../../assets/img/logo.png" width="100px" alt="" class="img-fluid">
         </div>
         <div class="col-sm">
-            <mat-form-field appearance="legacy">
-                <mat-label>Legacy form field</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>search</mat-icon>
-                <mat-hint>Hint</mat-hint>
-            </mat-form-field>
+            <form [formGroup]="searchForm">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Assignee</mat-label>
+                    <mat-icon matSuffix>search</mat-icon>
+                    <input type="text" matInput [matAutocomplete]="auto" formControlName="search" (ngModelChange)="search()">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let topic of filteredTopic" [value]="topic.title" routerLink="/topic/{{topic.id}}">
+                            {{topic.title}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </form>
         </div>
         <div class="col-sm text-right">
 

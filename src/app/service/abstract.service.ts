@@ -8,7 +8,7 @@ export class AbstractService<T> {
 
   protected route: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(protected http: HttpClient) { }
 
   save(entity: T) {
     return this.http.post(`/${this.route}`, entity, { responseType: 'text' });

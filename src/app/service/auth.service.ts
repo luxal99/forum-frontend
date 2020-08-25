@@ -12,4 +12,5 @@ export class AuthService {
   auth(user: User) {
     return this.http.post("/user/auth", user, { responseType: 'json' })
   }
+
 }

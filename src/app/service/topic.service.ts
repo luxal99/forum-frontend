@@ -8,4 +8,8 @@ import { Topics } from '../models/Topics';
 export class TopicService extends AbstractService<Topics> {
 
   route = "topic"
+
+  groupByCategory(id){
+    return this.http.get(`/${this.route}/sortByCategory/`+id,{responseType:'json'})
+  }
 }

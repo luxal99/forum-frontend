@@ -24,10 +24,14 @@ export class LoginDialogComponent implements OnInit {
   auth() {
 
     const user = new User(this.loginForm.get("username").value, this.loginForm.get("password").value);
-    
+
     this.authService.auth(user).subscribe(data => {
-      localStorage.setItem("token",data['id']);
-      localStorage.setItem("loggedUser",data["username"])
+      localStorage.setItem("token", data['id']);
+      localStorage.setItem("loggedUser", data["username"])
+
+      location.reload();
+    }, err => {
+
     })
 
   }

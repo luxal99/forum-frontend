@@ -2,7 +2,8 @@
     "context": [
         "/user",
         "/category",
-        "/topic"
+        "/topic",
+        "/reply"
     ],
     "target": "http://localhost:8080",
     "secure": false

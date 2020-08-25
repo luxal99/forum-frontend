@@ -1,0 +1,30 @@
+.reply-container {
+    padding: 2%
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.save-btn {
+    width: 80%;
+    background-color: #121212;
+    border: 1px solid #121212;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    padding: .5em 0 .5em 0;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-top: 2em;
+}
+
+.save-btn:hover {
+    background-color: #FF634E;
+    transition: .5s ease;
+    border: 1px solid #FF634E;
+}

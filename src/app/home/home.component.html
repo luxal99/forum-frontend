@@ -26,7 +26,10 @@
             <mat-divider style="margin-top: 2em;"></mat-divider>
             <div class="category-div">
 
-                <li *ngFor="let category of listOfCategories">
+                <li (click)="getAllTopics()">
+                    <h6><i class="fa fa-circle"></i> Sve</h6>
+                </li>
+                <li *ngFor="let category of listOfCategories" (click)="groupByCategory(category.id)">
                     <h6><i class="fa fa-circle" [ngStyle]="{ 'color': category.color  }"></i> {{category.title}}</h6>
                 </li>
             </div>

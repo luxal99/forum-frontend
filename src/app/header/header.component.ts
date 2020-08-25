@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
+import { Topics } from '../models/Topics';
+import { TopicService } from '../service/topic.service';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import {startWith, map} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-header',
@@ -10,13 +17,20 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private topicsService: TopicService,private _formBuilder: FormBuilder) { }
 
   loggedUser = localStorage.getItem("loggedUser");
+  listOfTopics: Array<Topics>
+  filteredTopic: Array<Topics> = [];
+  @Input() searchText: string;
 
 
+  searchForm: FormGroup = this._formBuilder.group({
+    search: '',
+  });
   ngOnInit() {
     this.isLogged();
+    this.getTopics();
   }
 
 
@@ -46,9 +60,37 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  logout(){
+  getTopics() {
+    this.topicsService.getAll().subscribe(data => {
+      this.listOfTopics = data as Array<Topics>;
+    })
+  }
+
+  logout() {
     localStorage.removeItem("loggedUser");
     localStorage.removeItem("token");
     location.reload();
   }
+
+  search() {
+    
+    if (this.searchForm.get("search").value === '') {
+      console.log('Ovde');
+      
+      this.filteredTopic = [];
+    }else{
+      this.listOfTopics.forEach(topic =>{
+
+        if (topic.title.includes(this.searchForm.get("search").value)) {
+          console.log(topic);
+          
+          this.filteredTopic.push(topic)
+        }
+      })
+    }
+    
+
+  }
+
+
 }

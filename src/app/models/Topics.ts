@@ -3,7 +3,7 @@ import { User } from './User';
 
 export class Topics {
     id;
-    title: string;
+    title: string[];
     id_category: Category;
     id_user: User;
     question:string;
