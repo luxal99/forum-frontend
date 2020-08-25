@@ -5,7 +5,7 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
 import { Topics } from '../models/Topics';
 import { TopicService } from '../service/topic.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import {startWith, map} from 'rxjs/operators';
+import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 
@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private topicsService: TopicService,private _formBuilder: FormBuilder) { }
+  constructor(private dialog: MatDialog, private topicsService: TopicService, private _formBuilder: FormBuilder) { }
 
   loggedUser = localStorage.getItem("loggedUser");
   listOfTopics: Array<Topics>
@@ -73,22 +73,26 @@ export class HeaderComponent implements OnInit {
   }
 
   search() {
-    
+
     if (this.searchForm.get("search").value === '') {
       console.log('Ovde');
-      
+
       this.filteredTopic = [];
-    }else{
-      this.listOfTopics.forEach(topic =>{
+    } else {
+      this.listOfTopics.forEach(topic => {
 
         if (topic.title.includes(this.searchForm.get("search").value)) {
-          console.log(topic);
-          
-          this.filteredTopic.push(topic)
+
+
+          var index = this.filteredTopic.findIndex(x => x.title === topic.title)
+
+          if (index < 0)
+            this.filteredTopic.push(topic)
+
         }
       })
     }
-    
+
 
   }
 
