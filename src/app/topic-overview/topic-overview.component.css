@@ -2,6 +2,10 @@
     padding: 5% 10% 0 10%;
 }
 
+.row {
+    margin: 0 !important;
+}
+
 h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -47,4 +51,24 @@ h4 {
     -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+}
+
+.cat-h6 {
+    font-weight: bold;
+    color: #f8f8fb;
+    width: 70%;
+    padding: .5em;
+}
+
+.cat-h6:hover {
+    background-color: #333 !important;
+    transition: .5s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }

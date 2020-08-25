@@ -14,6 +14,10 @@ import { ReplyService } from '../service/reply.service';
 })
 export class TopicOverviewComponent implements OnInit {
 
+
+  topic: Topics = null;
+  listOfTopics:Array<Topics> = [];
+
   constructor(private vcRef: ViewContainerRef,
     private cResolver: ComponentFactoryResolver, private route: ActivatedRoute, 
     private router: Router, private topicService: TopicService,
@@ -21,11 +25,8 @@ export class TopicOverviewComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.findTopic();
-    
+
   }
-
-  topic: Topics;
-
 
   incrementLike(id){
 
@@ -39,6 +40,11 @@ export class TopicOverviewComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.topicService.findById(params.id).subscribe(data => {
         this.topic = data as Topics;
+
+        this.topicService.groupByCategory(this.topic.idTopicsCategory.id).subscribe(data=>{
+          this.listOfTopics = data as Array<Topics> 
+        })
+        
       })
     })
   }
@@ -61,4 +67,6 @@ export class TopicOverviewComponent implements OnInit {
       });
     }
   }
+
+
 }
