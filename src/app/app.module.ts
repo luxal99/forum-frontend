@@ -16,6 +16,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TopicOverviewComponent } from './topic-overview/topic-overview.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ReplyDialogComponent } from './topic-overview/reply-dialog/reply-dialog.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ReplyDialogComponent } from './topic-overview/reply-dialog/reply-dialog
     HeaderComponent,
     AddTopicDialogComponent,
     ReplyDialogComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
