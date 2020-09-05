@@ -1,13 +1,13 @@
 <div class="nav-menu">
     <div class="row text-center">
-        <div class="col-sm text-center" [routerLink]="['/']" routerLinkActive="router-link-active">
-            <img src="../../assets/img/logo.png" width="100px" alt="" class="img-fluid">
+        <div class="col-sm text-center" [routerLink]="['/']" routerLinkActive="router-link-active" style="padding:1em">
+            <img src="../../assets/img/logo.png" width="200px" alt="" class="img-fluid">
         </div>
         <div class="col-sm">
             <form [formGroup]="searchForm">
                 <mat-form-field class="example-full-width">
                     <mat-label>Assignee</mat-label>
-                    <mat-icon matSuffix>search</mat-icon>
+                    <mat-icon matSuffix style="color: #FF634E;">search</mat-icon>
                     <input type="text" matInput [matAutocomplete]="auto" formControlName="search" (ngModelChange)="search()">
                     <mat-autocomplete #auto="matAutocomplete">
                         <mat-option *ngFor="let topic of filteredTopic" [value]="topic.title" routerLink="/topic/{{topic.id}}">
