@@ -41,12 +41,16 @@ export class TopicOverviewComponent implements OnInit {
       this.topicService.findById(params.id).subscribe(data => {
         this.topic = data as Topics;
 
+        localStorage.setItem("topic",JSON.stringify(data));
+
         this.topicService.groupByCategory(this.topic.idTopicsCategory.id).subscribe(data=>{
           this.listOfTopics = data as Array<Topics> 
         })
         
       })
     })
+
+    this.topic = JSON.parse(localStorage.getItem("topic"))
   }
 
   openReplyDialog(): void {
