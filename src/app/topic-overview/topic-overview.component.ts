@@ -6,6 +6,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { ReplyDialogComponent } from './reply-dialog/reply-dialog.component';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { ReplyService } from '../service/reply.service';
+import { ChatDialogComponent } from './chat-dialog/chat-dialog.component';
 
 @Component({
   selector: 'app-topic-overview',
@@ -16,21 +17,21 @@ export class TopicOverviewComponent implements OnInit {
 
 
   topic: Topics = null;
-  listOfTopics:Array<Topics> = [];
+  listOfTopics: Array<Topics> = [];
 
   constructor(private vcRef: ViewContainerRef,
-    private cResolver: ComponentFactoryResolver, private route: ActivatedRoute, 
+    private cResolver: ComponentFactoryResolver, private route: ActivatedRoute,
     private router: Router, private topicService: TopicService,
-    private dialog:MatDialog,private replyService:ReplyService) { }
+    private dialog: MatDialog, private replyService: ReplyService) { }
 
   async ngOnInit(): Promise<void> {
     this.findTopic();
 
   }
 
-  incrementLike(id){
+  incrementLike(id) {
 
-    this.replyService.incrementLike(id).subscribe(data=>{
+    this.replyService.incrementLike(id).subscribe(data => {
       this.findTopic();
     })
   }
@@ -41,12 +42,12 @@ export class TopicOverviewComponent implements OnInit {
       this.topicService.findById(params.id).subscribe(data => {
         this.topic = data as Topics;
 
-        localStorage.setItem("topic",JSON.stringify(data));
+        localStorage.setItem("topic", JSON.stringify(data));
 
-        this.topicService.groupByCategory(this.topic.idTopicsCategory.id).subscribe(data=>{
-          this.listOfTopics = data as Array<Topics> 
+        this.topicService.groupByCategory(this.topic.idTopicsCategory.id).subscribe(data => {
+          this.listOfTopics = data as Array<Topics>
         })
-        
+
       })
     })
 
@@ -58,13 +59,13 @@ export class TopicOverviewComponent implements OnInit {
     if (localStorage.getItem("loggedUser") !== null) {
       const dialogRef = this.dialog.open(ReplyDialogComponent, {
         width: 'auto',
-        data:this.topic
+        data: this.topic
       });
 
       dialogRef.afterClosed().subscribe(result => {
-       this.findTopic();
+        this.findTopic();
       });
-      
+
     } else {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
         width: 'auto'
@@ -72,5 +73,27 @@ export class TopicOverviewComponent implements OnInit {
     }
   }
 
+  openChatDialog(user) {
 
+    if (localStorage.getItem("loggedUser") !== null) {
+      const dialogRef = this.dialog.open(ReplyDialogComponent, {
+        width: 'auto',
+        data: this.topic
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.findTopic();
+      });
+
+    } else {
+      const dialogRef = this.dialog.open(ChatDialogComponent, {
+        width: '30%',
+        position: { right: '0' }, 
+        height: '100vh',
+        data:user
+      });
+    }
+  }
 }
+
+

@@ -43,7 +43,7 @@ import { ChatDialogComponent } from './topic-overview/chat-dialog/chat-dialog.co
   providers: [HttpClientModule,
     {provide:LocationStrategy,useClass:HashLocationStrategy}
   ],
-  entryComponents:[LoginDialogComponent,ReplyDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
+  entryComponents:[LoginDialogComponent,ChatDialogComponent,ReplyDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

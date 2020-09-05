@@ -1,0 +1,34 @@
+.chat-dialog {
+    padding: 2em;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h6 {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.message-input {
+    padding: 5em 0 5em 0;
+}
+
+.send-btn {
+    background-color: #FF634E;
+    border: 1px solid #FF634E;
+    color: #fff;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    width: 100%;
+    padding: 1em;
+    margin-top: .5em;
+    letter-spacing: 2px;
+}
+
+mat-form-field {
+    width: 100%;
+}
