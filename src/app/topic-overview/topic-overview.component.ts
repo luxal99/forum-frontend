@@ -75,10 +75,9 @@ export class TopicOverviewComponent implements OnInit {
 
   openChatDialog(user) {
 
-    if (localStorage.getItem("loggedUser") !== null) {
-      const dialogRef = this.dialog.open(ReplyDialogComponent, {
-        width: 'auto',
-        data: this.topic
+    if (localStorage.getItem("loggedUser") === null) {
+      const dialogRef = this.dialog.open(LoginDialogComponent, {
+        width: 'auto'
       });
 
       dialogRef.afterClosed().subscribe(result => {

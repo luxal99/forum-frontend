@@ -72,3 +72,17 @@ a:hover {
 li {
     list-style-type: none;
 }
+
+.send-message-btn {
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    margin-top: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 0 !important;
+    background-color: #ffa900;
+    padding: .5em 1em .5em 1em;
+    color: #fff;
+}
