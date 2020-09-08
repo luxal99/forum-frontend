@@ -27,7 +27,7 @@ h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     padding-left: .5em;
-    color: #999;
+    color: #eee;
     padding-top: 1.8em;
 }
 
@@ -72,5 +72,9 @@ a:hover {
 }
 
 input {
+    color: #fff;
+}
+
+#userParagraf {
     color: #fff;
 }

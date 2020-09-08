@@ -6,7 +6,7 @@
         <div class="col-sm">
             <form [formGroup]="searchForm">
                 <mat-form-field class="example-full-width">
-                    <mat-label>Assignee</mat-label>
+                    <mat-label>Pretrazi</mat-label>
                     <mat-icon matSuffix style="color: #FF634E;">search</mat-icon>
                     <input type="text" matInput [matAutocomplete]="auto" formControlName="search" (ngModelChange)="search()">
                     <mat-autocomplete #auto="matAutocomplete">
