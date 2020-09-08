@@ -4,7 +4,7 @@ export class Message {
     senderId;
     receiverId;
     message;
-    dateAndTime
+    dateAndTime;
 
     constructor(senderId?, receiverId?, message?) {
 
