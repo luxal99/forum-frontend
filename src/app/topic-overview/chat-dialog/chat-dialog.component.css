@@ -12,7 +12,7 @@ h6 {
 }
 
 .message-input {
-    padding: 5em 0 5em 0;
+    padding: 5em 0 0 0;
 }
 
 .send-btn {
@@ -31,4 +31,49 @@ h6 {
 
 mat-form-field {
     width: 100%;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chat-col-left {
+    background-color: #FF634E;
+    color: #fff;
+}
+
+.chat-col-left h5 {
+    padding-top: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-left h6 {
+    padding-bottom: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-left p {
+    padding-top: .5em;
+    padding-left: .5em;
+    font-size: 15px;
+}
+
+.chat-col-right {
+    background-color: #F3F4F5;
+}
+
+.chat-col-right h5 {
+    padding-top: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-right h6 {
+    padding-bottom: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-right p {
+    padding-top: .5em;
+    padding-left: .5em;
+    font-size: 15px;
 }
