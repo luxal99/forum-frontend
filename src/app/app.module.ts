@@ -18,6 +18,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ReplyDialogComponent } from './topic-overview/reply-dialog/reply-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChatDialogComponent } from './topic-overview/chat-dialog/chat-dialog.component';
+import { ChatComponent } from './profile/chat/chat.component';
+import { ProfileOverviewComponent } from './profile/profile-overview/profile-overview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { ChatDialogComponent } from './topic-overview/chat-dialog/chat-dialog.co
     ReplyDialogComponent,
     ProfileComponent,
     ChatDialogComponent,
+    ChatComponent,
+    ProfileOverviewComponent,
   ],
   imports: [
     BrowserModule,
