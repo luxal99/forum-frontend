@@ -11,6 +11,20 @@
     </div>
     <form [formGroup]="messageForm">
         <div class="message-input">
+            <div class="row" *ngFor="let message of listOfMessages">
+                <div class="col-sm " style="padding-top: 2em;">
+                    <h5 *ngIf="message.senderId.id === data.id">
+                        {{message.message}}
+                    </h5>
+                    <h6 *ngIf="message.senderId.id === data.id">{{message.senderId.username}}</h6>
+                </div>
+                <div class="col-sm text-right">
+                    <h5 *ngIf="message.senderId.id === loggedUser.id">
+                        {{message.message}}
+                    </h5>
+                    <h6 *ngIf="message.senderId.id === loggedUser.id">{{message.senderId.username}}</h6>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-8">
                     <mat-form-field appearance="fill">
