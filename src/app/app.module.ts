@@ -47,7 +47,7 @@ import { ProfileOverviewComponent } from './profile/profile-overview/profile-ove
   providers: [HttpClientModule,
     {provide:LocationStrategy,useClass:HashLocationStrategy}
   ],
-  entryComponents:[LoginDialogComponent,ChatDialogComponent,ReplyDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
+  entryComponents:[LoginDialogComponent,ChatComponent,ChatDialogComponent,ReplyDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { User } from '../models/User';
 import { MatDialog } from '@angular/material';
@@ -11,12 +11,21 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 })
 export class ProfileComponent implements OnInit {
 
+  @ViewChild('target', { read: ViewContainerRef,static:false }) entry: ViewContainerRef;
+
 
   loggedUser: User;
-  constructor(private authService: AuthService, private dialog: MatDialog) { }
+  constructor(private authService: AuthService, private dialog: MatDialog, private cvRef: ViewContainerRef, private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.findProfile();
+  }
+
+  async loadChat() {
+    this.entry.clear();
+    const { ChatComponent } = await import('./chat/chat.component');
+    const factory = this.resolver.resolveComponentFactory(ChatComponent)
+    this.entry.createComponent(factory);
   }
 
   findProfile() {

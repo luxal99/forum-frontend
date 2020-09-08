@@ -9,7 +9,8 @@ export class ChatComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  async ngOnInit(): Promise<void> {
 
+
+  }
 }
