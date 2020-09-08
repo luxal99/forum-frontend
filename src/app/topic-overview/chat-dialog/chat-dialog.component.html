@@ -9,16 +9,18 @@
     <div class="message-history">
 
     </div>
-    <div class="message-input">
-        <div class="row">
-            <div class="col-sm-8">
-                <mat-form-field appearance="fill">
-                    <textarea matInput></textarea>
-                </mat-form-field>
-            </div>
-            <div class="col-sm">
-                <button class="send-btn">POSALJI</button>
+    <form [formGroup]="messageForm">
+        <div class="message-input">
+            <div class="row">
+                <div class="col-sm-8">
+                    <mat-form-field appearance="fill">
+                        <textarea formControlName="message" matInput></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+                    <button class="send-btn" (click)="sendMessage()">POSALJI</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>

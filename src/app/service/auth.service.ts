@@ -13,4 +13,8 @@ export class AuthService {
     return this.http.post("/user/auth", user, { responseType: 'json' })
   }
 
+  findUserByHash(token) {
+    return this.http.post("/user/findUserByHash", token, { responseType: 'json' })
+  }
+
 }

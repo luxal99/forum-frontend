@@ -3,7 +3,8 @@
         "/user",
         "/category",
         "/topic",
-        "/reply"
+        "/reply",
+        "/message"
     ],
     "target": "http://localhost:8080",
     "secure": false
