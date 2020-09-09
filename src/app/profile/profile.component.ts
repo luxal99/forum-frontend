@@ -20,6 +20,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.findProfile();
   }
+ngAfterViewInit(): void {
+  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+  //Add 'implements AfterViewInit' to the class.
+  this.loadProfileOverview();
+}
 
   async loadChat() {
     this.entry.clear();
@@ -28,6 +33,12 @@ export class ProfileComponent implements OnInit {
     this.entry.createComponent(factory);
   }
 
+  async loadProfileOverview() {
+    this.entry.clear();
+    const { ProfileOverviewComponent } = await import('./profile-overview/profile-overview.component');
+    const factory = this.resolver.resolveComponentFactory(ProfileOverviewComponent)
+    this.entry.createComponent(factory);
+  }
   findProfile() {
     if (localStorage.getItem("token") !== null) {
       this.authService.findUserByHash({ token: localStorage.getItem("token") }).subscribe(data => {

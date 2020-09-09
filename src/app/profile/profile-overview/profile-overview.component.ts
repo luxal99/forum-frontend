@@ -9,7 +9,9 @@ export class ProfileOverviewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
+
+
   }
 
 }
