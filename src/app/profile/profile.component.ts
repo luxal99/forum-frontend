@@ -11,7 +11,7 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 })
 export class ProfileComponent implements OnInit {
 
-  @ViewChild('target', { read: ViewContainerRef,static:false }) entry: ViewContainerRef;
+  @ViewChild('target', { read: ViewContainerRef, static: false }) entry: ViewContainerRef;
 
 
   loggedUser: User;
@@ -20,11 +20,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.findProfile();
   }
-ngAfterViewInit(): void {
-  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-  //Add 'implements AfterViewInit' to the class.
-  this.loadProfileOverview();
-}
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.loadProfileOverview();
+  }
 
   async loadChat() {
     this.entry.clear();
@@ -38,6 +38,7 @@ ngAfterViewInit(): void {
     const { ProfileOverviewComponent } = await import('./profile-overview/profile-overview.component');
     const factory = this.resolver.resolveComponentFactory(ProfileOverviewComponent)
     this.entry.createComponent(factory);
+    
   }
   findProfile() {
     if (localStorage.getItem("token") !== null) {

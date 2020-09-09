@@ -17,6 +17,8 @@ export class ChatDialogComponent implements OnInit {
   listOfMessages: Array<Message> = [];
   loggedUser
 
+  
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private authService: AuthService, private messageService: MessageService) { }
 
   messageForm = new FormGroup({

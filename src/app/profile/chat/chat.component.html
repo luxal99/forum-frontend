@@ -1,1 +1,64 @@
-<p>chat works!</p>
+<div style="padding: 5em;">
+    <div class="row">
+        <div class="col-sm">
+            <div class="chat" *ngFor="let chat of listOfUsers" style="margin-top: 2em;" (click)="getMessages(chat)">
+                <div class="row">
+                    <div class="com-sm">
+                        <img src="../../../assets/img/defult_image.png" width="50px" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-sm">
+                        <h6>{{chat.username}}</h6>
+                        <h4>{{chat.idUserInfo.fullName}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8" id="chat-col">
+            <div class="chat-dialog" *ngIf="currentUser !== undefined">
+                <div class="">
+                    <img src="" style="padding-top: 2em;" id="profile-image" onerror="this.src='https://firebasestorage.googleapis.com/v0/b/soy-smile-249718.appspot.com/o/defult_image.png?alt=media&token=cb217c42-4060-4b67-9fa8-0986a1ac3f03'" width="50px" class="img-fluid">
+                    <h4>{{currentUser.idUserInfo.fullName}}</h4>
+
+                    <h6 style="font-weight: bold;">{{currentUser.username}}</h6>
+                </div>
+                <div class="message-history">
+
+                </div>
+                <form [formGroup]="messageForm">
+                    <div class="message-input">
+                        <div class="row" *ngFor="let message of listOfMessages">
+                            <div class="col-sm " style="margin-top: 2em;">
+                                <div class="chat-col-left">
+                                    <h5 *ngIf="message.senderId.id === currentUser.id">
+                                        {{message.message}}
+                                    </h5>
+                                    <h6 *ngIf="message.senderId.id === currentUser.id">{{message.senderId.username}}</h6>
+
+                                </div>
+                            </div>
+                            <div class="col-sm text-right ">
+                                <div class="chat-col-right">
+                                    <h5 *ngIf="message.senderId.id === loggedUser.id">
+                                        {{message.message}}
+                                    </h5>
+                                    <h6 *ngIf="message.senderId.id === loggedUser.id">{{message.senderId.username}}</h6>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 2em;">
+                            <div class="col-sm-8">
+                                <mat-form-field appearance="fill">
+                                    <textarea formControlName="message" matInput></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm">
+                                <button class="send-btn">POSALJI</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
