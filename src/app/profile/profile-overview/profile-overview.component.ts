@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicService } from 'src/app/service/topic.service';
+import { Topics } from 'src/app/models/Topics';
 
 @Component({
   selector: 'app-profile-overview',
@@ -7,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileOverviewComponent implements OnInit {
 
-  constructor() { }
+
+  listOfTopics: Array<Topics>
+  constructor(private topicService: TopicService) { }
 
   async ngOnInit(): Promise<void> {
 
+    this.getTopics();
+  }
 
+  getTopics() {
+    this.topicService.findByUser().subscribe(resp => {
+      this.listOfTopics = resp as Array<Topics>
+      console.log(resp);
+      
+    })
   }
 
 }
