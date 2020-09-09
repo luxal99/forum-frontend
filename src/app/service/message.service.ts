@@ -14,6 +14,6 @@ export class MessageService extends AbstractService<Message>{
   }
 
   getUsersFromChat() {
-    return this.http.get(`/${this.route}/${localStorage.getItem("token")}`, { responseType: 'json' })
+    return this.http.post(`/${this.route}/getChats`,{id:localStorage.getItem("token")}, { responseType: 'json' })
   }
 }

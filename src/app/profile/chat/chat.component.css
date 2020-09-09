@@ -16,6 +16,68 @@ h4 {
     width: 100%;
 }
 
+.col-sm-8 {}
+
 #chat-col {
+    margin-top: 2em;
     display: none;
+    background-color: #Fff;
+    padding: 1em;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    height: 40em !important;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.send-btn {
+    background-color: #FF634E;
+    border: 1px solid #FF634E;
+    color: #fff;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    width: 100%;
+    padding: 1em;
+    margin-top: .5em;
+    letter-spacing: 2px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chat-col-left {
+    background-color: #FF634E;
+    color: #fff;
+}
+
+.chat-col-left h5 {
+    padding-top: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-left h6 {
+    padding-bottom: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-right {
+    background-color: #F3F4F5;
+}
+
+.chat-col-right h5 {
+    padding-top: .5em;
+    padding-left: .5em;
+}
+
+.chat-col-right h6 {
+    padding-bottom: .5em;
+    padding-left: .5em;
 }
