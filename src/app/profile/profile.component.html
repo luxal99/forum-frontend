@@ -3,13 +3,15 @@
 <div>
     <div class="row">
         <div class="col-sm-3 text-center" style="padding-top: 5em;">
-            <img src="../../assets/img/defult_image.png" width="200px" alt="" class="img-fluid">
-            <a (click)="loadProfileOverview()">
-                <h3>Pregled</h3>
-            </a>
-            <a (click)="loadChat()">
-                <h3>Chat</h3>
-            </a>
+            <img src="../../assets/img/defult_image.png" width="100px" alt="" class="img-fluid">
+            <div style="padding-top: 3em;" class="text-left">
+                <a (click)="loadProfileOverview()">
+                    <h5><i class="fa fa-eye" style="color: #FF634E;"></i> Pregled</h5>
+                </a>
+                <a (click)="loadChat()">
+                    <h5><i class="fa fa-comments" style="color: #FF634E;"></i> Chat</h5>
+                </a>
+            </div>
         </div>
         <div class="col-sm-9">
             <div #target></div>
