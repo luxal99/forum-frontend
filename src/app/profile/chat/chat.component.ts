@@ -58,5 +58,19 @@ export class ChatComponent implements OnInit {
     })
   }
 
+  sendMessage() {
+
+    this.authService.findUserByHash({ token: localStorage.getItem("token") }).subscribe(data => {
+
+      const message = new Message(this.loggedUser, this.currentUser, this.messageForm.get("message").value);
+      this.messageService.save(message).subscribe(resp => {
+        this.getMessages(this.currentUser);
+      })
+    })
+
+    
+
+  }
+
 
 }

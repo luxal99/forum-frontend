@@ -24,8 +24,8 @@
 
                 <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn" id="userBtn"><mat-icon>keyboard_arrow_down</mat-icon></button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active">Profil</button>
-                    <button mat-menu-item (click)="logout()">Logout</button>
+                    <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active"><mat-icon style="color: #FF634E;">person</mat-icon> Profil</button>
+                    <button mat-menu-item (click)="logout()"><mat-icon style="color: #FF634E;">exit_to_app                    </mat-icon> Logout</button>
                 </mat-menu>
 
                 <a (click)="openLoginDialog()">
