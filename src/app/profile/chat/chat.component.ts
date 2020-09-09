@@ -46,7 +46,9 @@ export class ChatComponent implements OnInit {
 
   getMessages(user) {
     this.currentUser = user
-    document.getElementById('chat-col').style.display = 'block';
+    document.getElementById('chat-col').style.visibility = 'initial';
+
+    document.getElementById('chat-col').style.opacity = '1';
     this.authService.findUserByHash({ token: localStorage.getItem("token") }).subscribe(resp => {
       const obj = { senderId: resp, receiverId: user }
       this.messageService.getChat(obj).subscribe(resp => {
