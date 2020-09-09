@@ -8,4 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegistrationService extends AbstractService<Object> {
   route = "user";
+
+  uploadProfilePicture(image,token) {
+    return this.http.post(`/${this.route}/uploadPhoto`, { image: image,token:token }, { responseType: 'json' })
+  }
 }

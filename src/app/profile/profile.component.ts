@@ -3,6 +3,7 @@ import { AuthService } from '../service/auth.service';
 import { User } from '../models/User';
 import { MatDialog } from '@angular/material';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { UploadPhotoDialogComponent } from './upload-photo-dialog/upload-photo-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -52,4 +53,9 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  openUploadPhotoDialog(){
+    const dialogRef = this.dialog.open(UploadPhotoDialogComponent, {
+      width: 'auto'
+    });
+  }
 }

@@ -1,0 +1,16 @@
+<div class="profile-img">
+    <form [formGroup]="uploadForm">
+        <input type="file" #file formControlName="image" (change)="add($event.target.files)">
+
+        <div class="text-center">
+            <button class="upload-btn" (click)="upload()">
+                SACUVAJ
+            </button>
+        </div>
+
+        <div style="margin-top: 2em;">
+            <mat-progress-bar mode="determinate" [value]="percentage"></mat-progress-bar>
+
+        </div>
+    </form>
+</div>

@@ -1,9 +1,9 @@
 <app-header></app-header>
 
-<div>
+<div class="profile">
     <div class="row">
         <div class="col-sm-3 text-center" style="padding-top: 5em;">
-            <img src="../../assets/img/defult_image.png" width="100px" alt="" class="img-fluid">
+            <img [src]="loggedUser.profilePicture" width="150px" alt="" class="img-fluid profile-img" (click)="openUploadPhotoDialog()">
             <div style="padding-top: 3em;" class="text-left">
                 <a (click)="loadProfileOverview()">
                     <h5><i class="fa fa-eye" style="color: #FF634E;"></i> Pregled</h5>

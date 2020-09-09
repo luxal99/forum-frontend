@@ -86,3 +86,13 @@ li {
     padding: .5em 1em .5em 1em;
     color: #fff;
 }
+
+#profile-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 2em;
+    border-radius: 50%;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+}

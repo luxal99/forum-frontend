@@ -20,6 +20,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChatDialogComponent } from './topic-overview/chat-dialog/chat-dialog.component';
 import { ChatComponent } from './profile/chat/chat.component';
 import { ProfileOverviewComponent } from './profile/profile-overview/profile-overview.component';
+import { UploadPhotoDialogComponent } from './profile/upload-photo-dialog/upload-photo-dialog.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +38,7 @@ import { ProfileOverviewComponent } from './profile/profile-overview/profile-ove
     ChatDialogComponent,
     ChatComponent,
     ProfileOverviewComponent,
+    UploadPhotoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,12 +47,23 @@ import { ProfileOverviewComponent } from './profile/profile-overview/profile-ove
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyAz8PX_PdPZo7WmWuxLYVMDiJUOozl0Fn4",
+      authDomain: "soy-smile-249718.firebaseapp.com",
+      databaseURL: "https://soy-smile-249718.firebaseio.com",
+      projectId: "soy-smile-249718",
+      storageBucket: "soy-smile-249718.appspot.com",
+      messagingSenderId: "870517553704",
+      appId: "1:870517553704:web:d238ce266071d519f8131d",
+      measurementId: "G-JGV7HTSL0B"
+    }),
   ],
   providers: [HttpClientModule,
-    {provide:LocationStrategy,useClass:HashLocationStrategy}
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
-  entryComponents:[LoginDialogComponent,ChatComponent,ChatDialogComponent,ProfileOverviewComponent,ReplyDialogComponent,TopicOverviewComponent,HomeComponent,AddTopicDialogComponent,RegistrationDialogComponent],
+  entryComponents: [LoginDialogComponent, UploadPhotoDialogComponent, ChatComponent, ChatDialogComponent, ProfileOverviewComponent, ReplyDialogComponent, TopicOverviewComponent, HomeComponent, AddTopicDialogComponent, RegistrationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,18 @@
+.upload-btn {
+    width: 100%;
+    margin-top: 2em;
+    background-color: #FF634E;
+    border: 0 !important;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: bold;
+}
+
+.profile-img {
+    padding: 2em;
+}

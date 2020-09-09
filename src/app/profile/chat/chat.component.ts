@@ -49,6 +49,7 @@ export class ChatComponent implements OnInit {
     document.getElementById('chat-col').style.visibility = 'initial';
 
     document.getElementById('chat-col').style.opacity = '1';
+
     this.authService.findUserByHash({ token: localStorage.getItem("token") }).subscribe(resp => {
       const obj = { senderId: resp, receiverId: user }
       this.messageService.getChat(obj).subscribe(resp => {

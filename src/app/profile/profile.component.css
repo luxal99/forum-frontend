@@ -5,7 +5,7 @@
     
     .col-sm-3 {
         background-color: #121212;
-        height: 91.4vh;
+        height: 100vh;
     }
     
     h5 {
@@ -26,4 +26,18 @@
         background-color: #fff;
         color: #121212;
         transition: .5s ease;
+    }
+    
+    .profile-img {
+        border-radius: 100%;
+        height: 150px;
+    }
+    
+    .row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .profile {
+        max-height: 91vh;
     }
