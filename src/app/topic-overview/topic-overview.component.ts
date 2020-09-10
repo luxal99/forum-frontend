@@ -59,7 +59,7 @@ export class TopicOverviewComponent implements OnInit {
     if (localStorage.getItem("loggedUser") !== null) {
       const dialogRef = this.dialog.open(ReplyDialogComponent, {
         width: 'auto',
-        data: this.topic
+        data: this.topic, minHeight: '500px'
       });
 
       dialogRef.afterClosed().subscribe(result => {
@@ -87,9 +87,9 @@ export class TopicOverviewComponent implements OnInit {
     } else {
       const dialogRef = this.dialog.open(ChatDialogComponent, {
         width: '30%',
-        position: { right: '0' }, 
+        position: { right: '0' },
         height: '100vh',
-        data:user
+        data: user
       });
     }
   }

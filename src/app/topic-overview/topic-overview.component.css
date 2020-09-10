@@ -116,4 +116,7 @@ li {
     .desktop-col h3 {
         padding-top: 0em !important;
     }
+    p {
+        font-size: 16px;
+    }
 }

@@ -49,7 +49,8 @@ export class HomeComponent implements OnInit {
 
     if (localStorage.getItem("loggedUser") !== null) {
       const dialogRef = this.dialog.open(AddTopicDialogComponent, {
-        width: 'auto'
+        width: 'auto',
+        minHeight:'500px'
       });
 
       dialogRef.afterClosed().subscribe(result => {

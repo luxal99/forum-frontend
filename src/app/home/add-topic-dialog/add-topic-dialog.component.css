@@ -44,3 +44,9 @@ mat-form-field {
     transition: .5s ease;
     border: 1px solid #FF634E;
 }
+
+@media screen and (max-width:570px) {
+    .dialog {
+        padding: 1em;
+    }
+}
