@@ -1,6 +1,14 @@
 <app-header></app-header>
 <div class="row">
+    <div class="col-sm mobile-col " style="padding-top: 4em;border-left: 1px solid #e1e1e1;">
+        <h3 style="font-weight: 200 !important;">Teme iste kategorije</h3>
 
+        <li *ngFor="let topic of listOfTopics" class="text-center">
+            <a routerLink="/topic/{{topic.id}}" routerLinkActive="router-link-active">
+                <h6 class="cat-h6" [ngStyle]="{ 'background-color': topic.idTopicsCategory.color  }">{{topic.title}}</h6>
+            </a>
+        </li>
+    </div>
     <div class="col-sm-9">
         <div class="topic-container" id="topic-container">
             <div class="row">

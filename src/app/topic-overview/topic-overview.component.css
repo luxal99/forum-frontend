@@ -97,6 +97,10 @@ li {
     box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
 }
 
+.mobile-col {
+    display: none;
+}
+
 
 /* REPSONSIVE */
 
@@ -111,7 +115,17 @@ li {
         padding-left: 0%;
     }
     .desktop-col {
-        padding: 3em 4em 3em 4em;
+        display: none;
+    }
+    .mobile-col {
+        display: block;
+    }
+    h3 {
+        padding-top: 1em;
+    }
+    .desktop-col,
+    .mobile-col {
+        padding: 1em 3em 0 3em;
     }
     .desktop-col h3 {
         padding-top: 0em !important;

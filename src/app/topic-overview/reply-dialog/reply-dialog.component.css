@@ -28,3 +28,10 @@ p {
     transition: .5s ease;
     border: 1px solid #FF634E;
 }
+
+@media screen and (max-width:570px) {
+    p {
+        font-size: 15px;
+        padding: 1em;
+    }
+}

@@ -65,3 +65,21 @@ h5 {
     padding-bottom: .5em;
     padding-left: .5em;
 }
+
+img {
+    padding-top: 0 !important;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+@media screen and (max-width:570px) {
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 12px;
+    }
+}

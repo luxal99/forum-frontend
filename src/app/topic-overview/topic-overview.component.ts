@@ -24,7 +24,8 @@ export class TopicOverviewComponent implements OnInit {
     private router: Router, private topicService: TopicService,
     private dialog: MatDialog, private replyService: ReplyService) { }
 
-  async ngOnInit(): Promise<void> {
+   ngOnInit() {
+    window.scroll(0, 0);
     this.findTopic();
 
   }
@@ -59,7 +60,7 @@ export class TopicOverviewComponent implements OnInit {
     if (localStorage.getItem("loggedUser") !== null) {
       const dialogRef = this.dialog.open(ReplyDialogComponent, {
         width: 'auto',
-        data: this.topic, minHeight: '500px'
+        data: this.topic, maxHeight:'600px'
       });
 
       dialogRef.afterClosed().subscribe(result => {
@@ -70,14 +71,14 @@ export class TopicOverviewComponent implements OnInit {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
         width: 'auto'
       });
-    }
+  }
   }
 
   openChatDialog(user) {
 
     if (localStorage.getItem("loggedUser") === null) {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
-        width: 'auto'
+        minWidth: 'auto'
       });
 
       dialogRef.afterClosed().subscribe(result => {
@@ -86,7 +87,7 @@ export class TopicOverviewComponent implements OnInit {
 
     } else {
       const dialogRef = this.dialog.open(ChatDialogComponent, {
-        width: '30%',
+        minWidth: '30%',
         position: { right: '0' },
         height: '100vh',
         data: user
