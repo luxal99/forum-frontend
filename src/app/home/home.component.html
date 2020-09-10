@@ -1,6 +1,19 @@
 <app-header></app-header>
 <div class="home-container" id="home-container">
     <div class="row">
+        <div class="col-sm-3 text-right mobile-col">
+            <button class="add-topic-btn" (click)="openAddTopicDialog()"><i class="fa fa-plus" style="color: #fff;"></i> KREIRAJ TEMU</button>
+            <mat-divider style="margin-top: 2em;"></mat-divider>
+            <div class="category-div">
+
+                <li (click)="getAllTopics()">
+                    <h6><i class="fa fa-circle"></i> Sve</h6>
+                </li>
+                <li *ngFor="let category of listOfCategories" (click)="groupByCategory(category.id)">
+                    <h6><i class="fa fa-circle" [ngStyle]="{ 'color': category.color  }"></i> {{category.title}}</h6>
+                </li>
+            </div>
+        </div>
         <div class="col-sm">
             <div class="topic" *ngFor="let topic of listOfTopics" routerLink="/topic/{{topic.id}}">
                 <div class="row">
@@ -21,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 text-right">
+        <div class="col-sm-3 text-right desktop-col">
             <button class="add-topic-btn" (click)="openAddTopicDialog()"><i class="fa fa-plus" style="color: #fff;"></i> KREIRAJ TEMU</button>
             <mat-divider style="margin-top: 2em;"></mat-divider>
             <div class="category-div">

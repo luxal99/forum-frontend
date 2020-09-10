@@ -11,6 +11,10 @@
     font-weight: bold;
 }
 
+.mobile-col {
+    display: none;
+}
+
 .home-container {
     padding: 5% 10% 5% 10%;
 }
@@ -47,4 +51,18 @@ h6 {
     font-size: 15px;
     color: #fff;
     width: 30%;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:564px) {
+    .mobile-col {
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .desktop-col {
+        display: none;
+    }
 }

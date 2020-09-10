@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="row">
+
     <div class="col-sm-9">
         <div class="topic-container" id="topic-container">
             <div class="row">
@@ -18,7 +19,7 @@
 
                 </div>
                 <div class="col-sm reply-col text-right">
-                    <button mat-icon-button (click)="openReplyDialog(topic)"><mat-icon>reply</mat-icon></button>
+                    <button mat-icon-button (click)="openReplyDialog()"><mat-icon>reply</mat-icon></button>
                 </div>
             </div>
             <mat-divider></mat-divider>
@@ -49,7 +50,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm" style="padding-top: 4em;border-left: 1px solid #e1e1e1;">
+    <div class="col-sm desktop-col" style="padding-top: 4em;border-left: 1px solid #e1e1e1;">
         <h3 style="font-weight: 200 !important;">Teme iste kategorije</h3>
 
         <li *ngFor="let topic of listOfTopics">

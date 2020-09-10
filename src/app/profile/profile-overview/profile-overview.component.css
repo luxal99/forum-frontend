@@ -29,3 +29,9 @@ h6 {
     color: #fff !important;
     font-family: 'Montserrat', sans-serif !important;
 }
+
+@media screen and (max-width:570px) {
+    .profile {
+        padding: 3em 0 3em 0;
+    }
+}

@@ -96,3 +96,24 @@ li {
     -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
 }
+
+
+/* REPSONSIVE */
+
+@media screen and (max-width:570px) {
+    .category-h6 {
+        width: auto;
+    }
+    h3 {
+        padding-top: 3em;
+    }
+    .reply-container {
+        padding-left: 0%;
+    }
+    .desktop-col {
+        padding: 3em 4em 3em 4em;
+    }
+    .desktop-col h3 {
+        padding-top: 0em !important;
+    }
+}

@@ -5,7 +5,7 @@
     
     .col-sm-3 {
         background-color: #121212;
-        min-height: 100vh !important;
+        min-height: 100vh;
     }
     
     h5 {
@@ -40,4 +40,13 @@
     
     .profile {
         max-height: 91vh;
+    }
+    /* RESPONSIVE */
+    
+    @media screen and (max-width:570px) {
+        .col-sm-3 {
+            max-height: 100% !important;
+            height: 100%;
+            min-height: fit-content;
+        }
     }
