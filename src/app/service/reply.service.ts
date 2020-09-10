@@ -11,4 +11,8 @@ export class ReplyService extends AbstractService<Reply>{
   incrementLike(id){
     return this.http.put(`/${this.route}/like/` + id, { responseType: 'text' })
   }
+
+  findByUser() {
+    return this.http.post(`/${this.route}/findRepliesByUser`, { token: localStorage.getItem("token")},{ responseType: 'json' });
+  }
 }

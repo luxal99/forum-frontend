@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TopicService } from 'src/app/service/topic.service';
 import { Topics } from 'src/app/models/Topics';
+import { Reply } from 'src/app/models/Reply';
+import { ReplyService } from 'src/app/service/reply.service';
 
 @Component({
   selector: 'app-profile-overview',
@@ -9,20 +11,25 @@ import { Topics } from 'src/app/models/Topics';
 })
 export class ProfileOverviewComponent implements OnInit {
 
-
   listOfTopics: Array<Topics>
-  constructor(private topicService: TopicService) { }
+  listOfReplies: Array<Reply>
+  constructor(private replyService: ReplyService, private topicService: TopicService) { }
 
   async ngOnInit(): Promise<void> {
-
     this.getTopics();
+    this.getReplies();
+  }
+
+  getReplies() {
+    this.replyService.findByUser().subscribe(resp => {
+      this.listOfReplies = resp as Array<Reply>
+
+    })
   }
 
   getTopics() {
-    this.topicService.findByUser().subscribe(resp => {
-      this.listOfTopics = resp as Array<Topics>
-      console.log(resp);
-      
+    this.topicService.findByUser().subscribe(data => {
+      this.listOfTopics = data as Array<Topics>
     })
   }
 

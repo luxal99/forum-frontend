@@ -26,7 +26,6 @@ export class ChatComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.getLoggedUser();
     this.getUsers();
-    console.log(this.currentUser);
     
   }
 

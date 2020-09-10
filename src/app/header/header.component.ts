@@ -75,7 +75,6 @@ export class HeaderComponent implements OnInit {
   search() {
 
     if (this.searchForm.get("search").value === '') {
-      console.log('Ovde');
 
       this.filteredTopic = [];
     } else {

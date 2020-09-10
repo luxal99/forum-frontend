@@ -49,13 +49,9 @@ export class AddTopicDialogComponent implements OnInit {
 
       topic.id_user = loggedUser;
 
-      console.log(topic);
-
       this.topicService.save(topic).subscribe(data=>{
-        console.log(data);
         
       },err=>{
-        console.log(err);
         
       })
 

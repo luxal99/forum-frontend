@@ -1,0 +1,31 @@
+.profile {
+    padding: 5em;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.topic {
+    padding: 2em;
+    -webkit-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -25px rgba(0, 0, 0, 0.75);
+    margin-top: 2em;
+}
+
+.category {
+    width: 15% !important;
+    padding: .5em !important;
+    color: #fff !important;
+    font-family: 'Montserrat', sans-serif !important;
+}

@@ -23,7 +23,6 @@ export class UploadPhotoDialogComponent implements OnInit {
     this.image = files[0];
   }
   upload() {
-    console.log(this.image);
 
     this.afStorage.upload(this.image.name, this.image).percentageChanges().subscribe(data => {
       this.percentage = data
@@ -33,7 +32,7 @@ export class UploadPhotoDialogComponent implements OnInit {
       const downloadUrl = this.afStorage.ref(this.image.name).getDownloadURL().subscribe(data => {
 
         this.uploadService.uploadProfilePicture(data,localStorage.getItem("token")).subscribe(data=>{
-          console.log(data);
+
           
         })
        });
