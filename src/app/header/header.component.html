@@ -1,25 +1,29 @@
 <div class="nav-menu">
-    <div class="row text-center">
-        <div class="col-sm text-center" [routerLink]="['/']" routerLinkActive="router-link-active" style="padding:1em">
-            <img src="../../assets/img/logo.png" width="200px" alt="" class="img-fluid">
+    <div class="row text-left">
+        <div class="col-sm-9 text-left" style="padding:1em;display: inline-flex;">
+            <img [routerLink]="['/']" routerLinkActive="router-link-active" src="../../assets/img/logo.png" width="100px" alt="" class="img-fluid">
+            <div style="width: 50%;">
+                <form [formGroup]="searchForm">
+                    <mat-form-field class="example-full-width">
+                        <mat-label style="color: #fff;">Pretrazi</mat-label>
+
+                        <input type="text" matInput [matAutocomplete]="auto" formControlName="search" (ngModelChange)="search()">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let topic of filteredTopic" [value]="topic.title" routerLink="/topic/{{topic.id}}">
+                                {{topic.title}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </div>
         </div>
         <div class="col-sm">
-            <form [formGroup]="searchForm">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Pretrazi</mat-label>
-                    <mat-icon matSuffix style="color: #FF634E;">search</mat-icon>
-                    <input type="text" matInput [matAutocomplete]="auto" formControlName="search" (ngModelChange)="search()">
-                    <mat-autocomplete #auto="matAutocomplete">
-                        <mat-option *ngFor="let topic of filteredTopic" [value]="topic.title" routerLink="/topic/{{topic.id}}">
-                            {{topic.title}}
-                        </mat-option>
-                    </mat-autocomplete>
-                </mat-form-field>
-            </form>
+
         </div>
-        <div class="col-sm text-right">
+        <div class="col-sm text-right" style="padding: 1em;">
 
             <div style="display: inline-flex;">
+
                 <h4 id="userParagraf">{{loggedUser}}</h4>
 
                 <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn" id="userBtn"><mat-icon>keyboard_arrow_down</mat-icon></button>

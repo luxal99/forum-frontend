@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit {
     this.topicService.getAll().subscribe(data => {
       this.listOfTopics = data as Array<Topics>
     }, err => {
-
+        console.log(err);
+        
     })
   }
 
