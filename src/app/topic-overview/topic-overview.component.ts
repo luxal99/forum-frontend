@@ -60,7 +60,7 @@ export class TopicOverviewComponent implements OnInit {
     if (localStorage.getItem("loggedUser") !== null) {
       const dialogRef = this.dialog.open(ReplyDialogComponent, {
         width: 'auto',
-        data: this.topic, maxHeight:'600px'
+        data: this.topic, maxHeight:'500px'
       });
 
       dialogRef.afterClosed().subscribe(result => {
