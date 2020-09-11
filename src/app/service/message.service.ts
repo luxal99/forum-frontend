@@ -13,7 +13,11 @@ export class MessageService extends AbstractService<Message>{
     return this.http.post(`/${this.route}/get`, obj, { responseType: 'json' })
   }
 
+  getUnreadMessages() {
+    return this.http.post(`${this.route}/unread`, { id: localStorage.getItem("token") }, { responseType: 'json' })
+  }
+
   getUsersFromChat() {
-    return this.http.post(`/${this.route}/getChats`,{id:localStorage.getItem("token")}, { responseType: 'json' })
+    return this.http.post(`/${this.route}/getChats`, { id: localStorage.getItem("token") }, { responseType: 'json' })
   }
 }

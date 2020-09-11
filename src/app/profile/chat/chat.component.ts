@@ -63,6 +63,7 @@ export class ChatComponent implements OnInit {
 
       const message = new Message(this.loggedUser, this.currentUser, this.messageForm.get("message").value);
       this.messageService.save(message).subscribe(resp => {
+        this.messageForm.get("message").reset();
         this.getMessages(this.currentUser);
       })
     })

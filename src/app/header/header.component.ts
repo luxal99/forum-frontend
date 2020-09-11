@@ -7,6 +7,8 @@ import { TopicService } from '../service/topic.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { MessageService } from '../service/message.service';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 
@@ -17,12 +19,15 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private topicsService: TopicService, private _formBuilder: FormBuilder) { }
+  constructor(private dialog: MatDialog, private topicsService: TopicService, private _formBuilder: FormBuilder, private messageService: MessageService) { }
 
   loggedUser = localStorage.getItem("loggedUser");
   listOfTopics: Array<Topics>
+  listOfNotifications: Array<Message>
   filteredTopic: Array<Topics> = [];
   @Input() searchText: string;
+
+  notificationCounter = 0;
 
 
   searchForm: FormGroup = this._formBuilder.group({
@@ -31,6 +36,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.isLogged();
     this.getTopics();
+    this.getNotification();
   }
 
 
@@ -38,10 +44,18 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem("token") === null) {
       document.getElementById("userParagraf").style.display = 'none';
       document.getElementById("userBtn").style.display = 'none';
+      document.getElementById("notification").style.display = 'none';
     } else {
       document.getElementById("h4-bold").style.display = 'none';
       document.getElementById("h4-bold-active").style.display = 'none';
     }
+  }
+
+  getNotification() {
+    this.messageService.getUnreadMessages().subscribe(data => {
+        this.listOfNotifications = data as Array<Message>
+        this.notificationCounter = this.listOfNotifications.length;
+    })
   }
 
   openLoginDialog(): void {

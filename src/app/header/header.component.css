@@ -83,6 +83,11 @@ input {
     color: #fff;
 }
 
+.notification-div {
+    padding: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
 @media screen and (max-width:756px) {
     .search-div {
         width: 100%;

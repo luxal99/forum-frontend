@@ -57,6 +57,7 @@ export class ChatDialogComponent implements OnInit {
 
       const message = new Message(data, this.data, this.messageForm.get("message").value);
       this.messageService.save(message).subscribe(resp => {
+        this.messageForm.get("message").reset();
         this.getMessages();
       })
     })
