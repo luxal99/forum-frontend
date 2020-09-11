@@ -54,3 +54,7 @@ mat-label {
     padding-top: 2em;
     padding-bottom: 2em;
 }
+
+::ng-deep .mat-horizontal-stepper-header {
+    pointer-events: none !important;
+}
