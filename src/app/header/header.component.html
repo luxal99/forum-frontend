@@ -24,11 +24,11 @@
 
             <div style="display: inline-flex;">
 
-                <button mat-icon-button [matMenuTriggerFor]="notificationMenu" id="userBtn">         <mat-icon [matBadge]="notificationCounter" style="margin-top: 1.5em;margin-right: 2em;color: #fff;" id="notification" matBadgeColor="warn">info</mat-icon></button>
+                <button mat-icon-button [matMenuTriggerFor]="notificationMenu" id="notification"><mat-icon [matBadge]="notificationCounter" style="margin-top: 1.5em;margin-right: 2em;color: #fff;" id="notification" matBadgeColor="warn">info</mat-icon></button>
 
                 <mat-menu #notificationMenu="matMenu">
-                    <div class="notification-div" *ngFor="let notification of listOfNotifications">
-                        <h6>Neprocitana poruka od <span style="font-weight: bold;">{{notification.senderId.username}}</span></h6>
+                    <div class="notification-div" *ngFor="let notf of listOfNotifications">
+                        <h6>Neprocitana poruka od <span style="font-weight: bold;">{{notf.senderId.username}}</span></h6>
                     </div>
                 </mat-menu>
 

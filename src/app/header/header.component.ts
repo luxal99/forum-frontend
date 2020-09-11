@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   constructor(private dialog: MatDialog, private topicsService: TopicService, private _formBuilder: FormBuilder, private messageService: MessageService) { }
 
   loggedUser = localStorage.getItem("loggedUser");
-  listOfTopics: Array<Topics>
+  listOfTopics: Array<Topics> = [];
   listOfNotifications: Array<Message>
   filteredTopic: Array<Topics> = [];
   @Input() searchText: string;
@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.isLogged();
     this.getTopics();
-    this.getNotification();
   }
 
 
@@ -48,13 +47,16 @@ export class HeaderComponent implements OnInit {
     } else {
       document.getElementById("h4-bold").style.display = 'none';
       document.getElementById("h4-bold-active").style.display = 'none';
+
+      this.getNotification();
+
     }
   }
 
   getNotification() {
     this.messageService.getUnreadMessages().subscribe(data => {
-        this.listOfNotifications = data as Array<Message>
-        this.notificationCounter = this.listOfNotifications.length;
+      this.listOfNotifications = data as Array<Message>
+      this.notificationCounter = this.listOfNotifications.length;
     })
   }
 
