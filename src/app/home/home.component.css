@@ -29,6 +29,10 @@ h6 {
     padding-top: .5em;
 }
 
+h6:hover {
+    opacity: .8;
+}
+
 .category-div {
     padding-top: 1.5em;
 }
