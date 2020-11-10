@@ -28,7 +28,7 @@
 
                 <mat-menu #notificationMenu="matMenu">
                     <div class="notification-div" *ngFor="let notf of listOfNotifications">
-                        <h6>Neprocitana poruka od <span style="font-weight: bold;">{{notf.senderId.username}}</span></h6>
+                        <h6>Neprocitana poruka od <span style="font-weight: bold;" *ngIf="listOfNotifications.length > 0">{{notf.senderId.username}}</span></h6>
                     </div>
                 </mat-menu>
 

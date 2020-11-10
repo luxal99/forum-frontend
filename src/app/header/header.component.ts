@@ -5,10 +5,8 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
 import { Topics } from '../models/Topics';
 import { TopicService } from '../service/topic.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { startWith, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { MessageService } from '../service/message.service';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { Message } from 'src/app/models/Message';
 
 
 
